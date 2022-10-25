@@ -1,0 +1,33 @@
+.logo {
+  width: 200px;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.title {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+.login_button {
+  border-radius: 20px;
+  letter-spacing: 1px;
+  background-color: #2ebd59;
+  padding: 0.7em 1.2em;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  border: 3px solid #2ebd59;
+}
+
+.login_button:hover {
+  border: 3px solid white;
+}
+.container {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,4 +1,4 @@
-import { generateRandomString } from "./randomString"
+import { generateRandomString } from "../randomString"
 import { stringify } from 'querystring'
 
 export default function getPermissions() {

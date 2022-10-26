@@ -1,8 +1,4 @@
-export interface TracksResponse {
-
-}
-
-export interface Tracks {
+export interface Artists {
   external_urls: ExternalUrls;
   followers:     Followers;
   genres:        string[];

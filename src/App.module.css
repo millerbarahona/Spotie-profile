@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+}
+
+.main {
+  flex-grow: 1;
+  overflow-y: scroll;
+  margin-left: 100px;
+}

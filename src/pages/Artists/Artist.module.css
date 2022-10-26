@@ -1,0 +1,16 @@
+.imgPoster {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 100%;
+  -webkit-user-drag: none;
+}
+
+.listContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.container {
+  margin-top: 100px;
+}

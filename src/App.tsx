@@ -1,17 +1,25 @@
-import { useState } from 'react'
-import { Provider } from 'react-redux'
 import './App.css'
-import store from './redux/store'
+import { NavBar } from './components'
 import Router from './router/Router'
+import styles from './App.module.css'
+import { uiStore } from './state'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const uiState = uiStore()
   return (
     <div className="App">
-      <Provider store={store}>
-        <Router />
-      </Provider>
+
+      <BrowserRouter>
+        <div className={styles.container}>
+          {
+            uiState.navbar ? <NavBar /> : <div></div>
+          }
+          <div className={styles.main}>
+            <Router />
+          </div>
+        </div>
+      </BrowserRouter>
     </div>
   )
 }

@@ -1,6 +1,7 @@
-import { AccessToken } from "../models"
+import { AccessToken } from "../../models"
 import {Buffer} from 'buffer'
-import { getUserLocal } from "./persistUserLocal"
+import { getUserLocal } from "../persistUserLocal"
+import { userStore } from "../../state"
 
 export default async function getAcessToken  (code: string) {
   const url = 'https://accounts.spotify.com/api/token'
@@ -43,4 +44,15 @@ export async function refreshToken  () {
   })
   const body:AccessToken = await res.json()
   return body
+}
+
+export async function checkRefresh () {
+  const expitation_time = 3600 * 1000;
+  //const userState = userStore();
+  const user = getUserLocal()
+
+  if(Date.now() - user.time > expitation_time) {
+    console.log('refrescando')
+    return await refreshToken()
+  } 
 }

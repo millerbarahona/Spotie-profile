@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: 100vh;
+  justify-content: center;
+  background-color: black;
+  position: fixed;
+}
+
+.Imgicon {
+  width: 30px;
+  height: 30px;
+  fill: #ffff;
+  border-radius: 100%;
+  -webkit-user-drag: none;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  fill: #ffff;
+  filter:  invert(1);
+  opacity: 0.5;
+}
+
+.navItem {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-clip: padding-box;
+}
+.navItem:hover{
+  cursor: pointer;
+  background: #181818;
+  opacity: 1;
+}
+
+.navItem div:hover{
+  cursor: pointer;
+  background: #181818;
+  filter: opacity(1);
+}
+
+
+.navItem:hover > div > img {
+  opacity: 1;
+}
+
+.navItem p {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.selected {
+  opacity: 1;
+}
+
+.selected > div > img {
+  opacity: 1;
+}

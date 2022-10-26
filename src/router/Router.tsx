@@ -1,23 +1,23 @@
 import { BrowserRouter, Route } from 'react-router-dom'
 import PrivateGuard from '../guard/privateGuard'
 import PublicGuard from '../guard/publicGuard'
-import { Authorization, Login, Profile } from '../pages'
-import RoutesWithNotFount from '../utilities/routes-with-not-fund'
+import { Artists, Authorization, Login, Profile, Tracks } from '../pages'
+import { RoutesWithNotFund } from '../utilities'
 import { privateRoutes, publicRoutes } from './routes'
 
 function Router() {
   return (
-    <BrowserRouter>
-      <RoutesWithNotFount>
+      <RoutesWithNotFund>
         <Route element={<PublicGuard />}>
           <Route path={publicRoutes.LOGIN} element={<Login />} />
         </Route>
         
           <Route path={privateRoutes.PROFILE} element={<Profile />} />
+          <Route path={privateRoutes.ARTISTS} element={<Artists />} />
+          <Route path={privateRoutes.TRACKS} element={<Tracks />} />
           <Route path={publicRoutes.AUTH} element={<Authorization />} />
         
-    </RoutesWithNotFount>
-    </BrowserRouter >
+    </RoutesWithNotFund>
   )
 }
 

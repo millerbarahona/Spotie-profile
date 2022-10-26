@@ -2,11 +2,13 @@ import { useEffect } from 'react'
 import { getAccessToken, getPermissions, getUser } from '../../utilities'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { userStore } from '../../state/UserStore';
+import { uiStore } from '../../state';
 
 function Authorization() {
   const [searchParams] = useSearchParams()
   const navigate = useNavigate()
   const store = userStore()
+  const uiState = uiStore()
 
   useEffect(() => {
     if (searchParams.get('code') === null) {
@@ -23,6 +25,7 @@ function Authorization() {
             .then((data) => {
               //dispatch(logIn({ ...data, refresh_token: refresh_token, access_token: access_token, time: access.expires_in + Date.now()}))
               store.addUser({ ...data, refresh_token: refresh_token, access_token: access_token, time: access.expires_in + Date.now()})
+              uiState.setNavVisible()
             })
         })
         

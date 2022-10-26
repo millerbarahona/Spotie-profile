@@ -22,9 +22,11 @@ export const userStore = create<UserState>((set) => ({
   },
   setUser: (newUser) => {
     set((state) => {
-      const result = { ...state.actualUser, ...state }
+      const result = { ...state.actualUser, ...newUser }
       saveUsarLocal(result)
-      return result
+      return {
+        actualUser: result
+      }
     })
   },
   removeUser: () => {

@@ -4,5 +4,7 @@ export const publicRoutes = {
 }
 
 export const privateRoutes = {
-  PROFILE: '/profile'
+  PROFILE: '/profile',
+  ARTISTS: '/artists',
+  TRACKS: '/tracks'
 }

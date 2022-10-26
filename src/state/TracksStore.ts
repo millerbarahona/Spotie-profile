@@ -1,10 +1,10 @@
-import create from "zustand";
-import { Tracks } from "../models";
+import create from 'zustand'
+import { Track } from '../models'
 
 interface TracksState {
-  tracks: Tracks[],
-  addTracks: (newTracks: Tracks[]) => void,
-  updateTracks: (newTracks: Tracks[]) => void,
+  tracks: Track[],
+  addTracks: (newTracks: Track[]) => void
+  updateTracks: (newTracks: Track[]) => void,
   removeTracks: () => void
 }
 
@@ -19,17 +19,15 @@ export const tracksStore = create<TracksState>((set) => ({
   },
   updateTracks: (newTracks) => {
     set((state) => {
-      const result = { ...state.tracks, ...state }
+      const result = { ...state.tracks, ...newTracks }
       return {
         tracks: result
       }
     })
   },
   removeTracks: () => {
-    set((state) => {
-      return {
-        tracks: []
-      }
-    })
-  }
+    set((state) => ({
+      tracks: []
+    }))
+  },
 }))

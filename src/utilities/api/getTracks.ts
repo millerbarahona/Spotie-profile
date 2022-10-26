@@ -1,4 +1,5 @@
-import  TracksResponse from "../models/TracksResponse"
+import { TrackResponse } from '../../models' 
+import { checkRefresh } from '../'
 
 interface Props {
   time?: string, 
@@ -7,7 +8,8 @@ interface Props {
 }
 
 export default async function getTracks(props: Props) {
-  const url = `https://api.spotify.com/v1/me/top/artists?limit=${props.limit ? props.limit : 50}&time_range=${props.time ? props.time : 'long_term'}`
+  const url = `https://api.spotify.com/v1/me/top/tracks?limit=${props.limit ? props.limit : 50}&time_range=${props.time ? props.time : 'long_term'}`
+  await checkRefresh()
   const res = await fetch(url, {
     headers: {
       'Accept': 'application/json',
@@ -15,6 +17,6 @@ export default async function getTracks(props: Props) {
       'Authorization': `Bearer ${props.code}`
     }
   })
-  const body:TracksResponse = await res.json()
+  const body:TrackResponse = await res.json()
   return body
 }

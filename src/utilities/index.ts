@@ -1,8 +1,10 @@
-export { default as getAccessToken } from './getAccessToken';
-export { default as getPermissions } from './getPermissions';
-export { default as getUser } from './getUser';
+export { default as getAccessToken } from './api/getAccessToken';
+export * from './api/getAccessToken';
+export { default as getArtists } from './api/getArtists';
+export { default as getTracks } from './api/getTracks';
+export { default as getPermissions } from './api/getPermissions';
+export { default as getUser } from './api/getUser';
 export * from './persistUserLocal';
 export * from './randomString';
-export { refreshToken as refreshToken } from './getAccessToken';
-export { default as routesWithNotFund } from './routes-with-not-fund';
-export { default as getTracks } from './getArtists';
+export { default as refreshToken } from './refreshToken';
+export { default as RoutesWithNotFund } from './routes-with-not-fund';

@@ -9,7 +9,6 @@ function Artists() {
 
   useEffect(() => {
     getArtists({ code: userState.actualUser.access_token, limit: 50, time: 'long_term' }).then((res) => artistState.addArtists(res.items))
-
   }, [])
 
   return (

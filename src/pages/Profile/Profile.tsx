@@ -16,6 +16,7 @@ function Profile() {
     getArtists({ code: userState.actualUser.access_token, limit: 10, time: 'short_term' }).then((res) => artistState.addArtists(res.items))
     getTracks({code: userState.actualUser.access_token, limit: 5, time: 'short_term'}).then((tracks) => tracksState.addTracks(tracks.items))
   }, [])
+  
   const logOut = () => {
     userState.removeUser()
   }

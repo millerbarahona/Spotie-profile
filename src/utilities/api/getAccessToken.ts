@@ -1,7 +1,6 @@
 import { AccessToken } from "../../models"
 import {Buffer} from 'buffer'
 import { getUserLocal } from "../persistUserLocal"
-import { userStore } from "../../state"
 
 export default async function getAcessToken  (code: string) {
   const url = 'https://accounts.spotify.com/api/token'
@@ -12,7 +11,7 @@ export default async function getAcessToken  (code: string) {
   let urlencoded = new URLSearchParams();
   urlencoded.append("grant_type", "authorization_code");
   urlencoded.append("code", code);
-  urlencoded.append("redirect_uri", 'http://localhost:3000/auth');
+  urlencoded.append("redirect_uri", import.meta.env.VITE_PROD ? 'https://spotie-profile.netlify.app/auth' :'http://localhost:3000/auth');
 
   const res = await fetch(url,{
     method: 'POST',

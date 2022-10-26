@@ -13,7 +13,7 @@ function NavBar() {
 
   return (
     <nav className={styles.container}>
-      <div onClick={()=> {navigate('/profile')}}>
+      <div onClick={()=> {navigate('/profile')}} style={{cursor: 'pointer'}}>
         <img src={userState.actualUser.image} className={styles.Imgicon} alt="" />
         <p style={{ margin: 0, fontWeight: 700 }}>Home</p>
       </div>

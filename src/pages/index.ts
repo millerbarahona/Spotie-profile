@@ -1,6 +1,10 @@
 export { default as Artists } from './Artists/Artists';
 export { default as Authorization } from './Authorization/Authorization';
 export { default as Login } from './Login/Login';
+export { default as PlaylistDetail } from './Playlists/PlaylistDetail';
+export { default as Playlists } from './Playlists/Playlists';
 export { default as Profile } from './Profile/Profile';
+export { default as TopArtistReview } from './Profile/TopArtistReview';
+export { default as TopTracks } from './Profile/TopTracks';
 export { default as TrackDetails } from './Tracks/TrackDetails';
 export { default as Tracks } from './Tracks/Tracks';

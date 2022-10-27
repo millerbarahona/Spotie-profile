@@ -19,8 +19,8 @@ function NavBar() {
       </div>
       <NavBarItem icon={microIcon} label='Top Artists' route={privateRoutes.ARTISTS}/>
       <NavBarItem icon={soundIcon} label='Top Tracks' route={privateRoutes.TRACKS}/>
-      <NavBarItem icon={recentIcon} label='Recent' route='/artists'/>
-      <NavBarItem icon={playlistIcon} label='Playlists' route='/artists'/>
+      <NavBarItem icon={recentIcon} label='Recent' route={privateRoutes.PLAYLISTS}/>
+      <NavBarItem icon={playlistIcon} label='Playlists' route={privateRoutes.PLAYLISTS}/>
     </nav>
   )
 }

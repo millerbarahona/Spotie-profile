@@ -9,7 +9,7 @@
   margin-left: 100px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .container {
     display: flex;
     flex-direction: column;

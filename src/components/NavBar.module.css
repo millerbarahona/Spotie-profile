@@ -8,7 +8,7 @@
   position: fixed;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   .container {
     flex-direction: row;
     height: fit-content;

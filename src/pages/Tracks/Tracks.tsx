@@ -29,7 +29,7 @@ function Tracks() {
             <img src={track.album.images[2].url} alt="" />
             <div>
               <h3>{track.name}</h3>
-              <h4>{track.artists[0].name} . {track.album.name}</h4>
+              <h4>{track.artists[0].name} - {track.album.name}</h4>
             </div>
           </div>
         ))

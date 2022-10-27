@@ -1,15 +1,23 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { tracksStore, userStore } from "../../state";
-import { getTracks } from "../../utilities"
+import { checkRefresh, getTracks, getUserLocal } from "../../utilities"
 import styles from '../Artists/Artist.module.css'
 
 function Tracks() {
   const userState = userStore()
   const tracksState = tracksStore()
+  const user = getUserLocal()
+  const navigate = useNavigate()
 
   useEffect(() => {
-    getTracks({code: userState.actualUser.access_token, limit: 50, time: 'medium_term'}).then((tracks) => tracksState.addTracks(tracks.items))
+    checkRefresh().then((response) => {
+      !response ? null : userState.setUser({ ...user, access_token: response.access_token, time: response.expires_in + Date.now() })
+    })
+
+    getTracks({code: userState.actualUser.access_token, limit: 50, time: 'long_term'}).then((tracks) => tracksState.addTracks(tracks.items))
   }, [])
+
   return (
     <div>
       <div className={styles.container}>
@@ -17,11 +25,9 @@ function Tracks() {
         <div className={styles.listContainer}>
           {
             tracksState.tracks.map((track, index) => (
-              <div key={index}>
+              <div key={index} onClick={() => {navigate(`/tracks/${track.id}`)}} style={{cursor: 'pointer'}}>
                 <img src={track.album.images[0].url} className={styles.imgPoster} />
                 <p>{track.name} - {track.album.name}</p>
-                <div style={{display: "flex", flexDirection: 'row', gap: 5}}>
-                </div>
               </div>
             ))
           }

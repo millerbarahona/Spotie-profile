@@ -1,3 +1,10 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-evenly;
+  gap: 30px;
+}
+
 .profileImg {
   border-radius: 50%;
   -webkit-user-drag: none;
@@ -16,6 +23,7 @@
 
 .header {
   margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .link {
@@ -24,13 +32,76 @@
 }
 
 .artistImg {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   border-radius: 100%;
   object-fit: cover;
 }
 
-.artist {
+.artistItem {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.artistItem > h4 {
+  text-align: start;
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.trackItem {
   display: flex;
   flex-direction: row;
+  margin-bottom: 20px;
 }
+
+.trackItem:hover {
+  cursor: pointer;
+}
+
+.trackItem img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+}
+
+.trackItem > div {
+  flex-grow: 1;
+  text-align: start;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.trackItem h3 {
+  margin: 0;
+}
+
+.trackItem h4 {
+  margin: 0;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.head > button {
+  background-color: #000000;
+  border: none;
+  height: fit-content;
+  padding: 10px;
+  border-radius: 20px;
+  border: 3px solid #000000;
+}
+
+.head > button:hover {
+  border: 3px solid #2ebd59;
+  color: #2ebd59;
+  cursor: pointer;
+}
+

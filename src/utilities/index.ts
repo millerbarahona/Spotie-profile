@@ -1,7 +1,7 @@
 export { default as getAccessToken } from './api/getAccessToken';
 export * from './api/getAccessToken';
 export { default as getArtists } from './api/getArtists';
-export { default as getTracks } from './api/getTracks';
+export * from './api/getTracks';
 export { default as getPermissions } from './api/getPermissions';
 export { default as getUser } from './api/getUser';
 export * from './persistUserLocal';

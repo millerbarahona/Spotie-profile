@@ -6,5 +6,6 @@ export const publicRoutes = {
 export const privateRoutes = {
   PROFILE: '/profile',
   ARTISTS: '/artists',
-  TRACKS: '/tracks'
+  TRACKS: '/tracks',
+  TRACK: '/tracks/:idTrack'
 }

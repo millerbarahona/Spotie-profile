@@ -1,6 +1,6 @@
 import { AccessToken } from "../../models"
 import {Buffer} from 'buffer'
-import { getUserLocal } from "../persistUserLocal"
+import { getUserLocal, updateUserLocal } from "../persistUserLocal"
 
 export default async function getAcessToken  (code: string) {
   const url = 'https://accounts.spotify.com/api/token'
@@ -42,6 +42,7 @@ export async function refreshToken  () {
     },
   })
   const body:AccessToken = await res.json()
+  updateUserLocal({...user, access_token: body.access_token, time: Date.now() + body.expires_in, refresh_token: body.refresh_token})
   return body
 }
 

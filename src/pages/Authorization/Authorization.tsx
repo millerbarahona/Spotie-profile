@@ -21,7 +21,7 @@ function Authorization() {
         .then((access) => {
           access_token = access.access_token 
           refresh_token = access.refresh_token 
-          getUser(access.access_token)
+          getUser({code: access.access_token})
             .then((data) => {
               //dispatch(logIn({ ...data, refresh_token: refresh_token, access_token: access_token, time: access.expires_in + Date.now()}))
               store.addUser({ ...data, refresh_token: refresh_token, access_token: access_token, time: access.expires_in + Date.now()})

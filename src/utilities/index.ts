@@ -7,5 +7,4 @@ export { default as getPermissions } from './api/getPermissions';
 export { default as getUser } from './api/getUser';
 export * from './persistUserLocal';
 export * from './randomString';
-export { default as refreshToken } from './refreshToken';
 export { default as RoutesWithNotFund } from './routes-with-not-fund';

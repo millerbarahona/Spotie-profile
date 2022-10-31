@@ -1,4 +1,4 @@
-import { AccessToken } from "../../models"
+import { AccessToken, UserInfo } from "../../models"
 import {Buffer} from 'buffer'
 import { getUserLocal, updateUserLocal } from "../persistUserLocal"
 
@@ -29,7 +29,6 @@ export async function refreshToken  () {
   const client_id = import.meta.env.VITE_CLIENT_ID
   const client_secret = import.meta.env.VITE_CLIENT_SECRET
   const user = getUserLocal()
-
   let urlencoded = new URLSearchParams();
   urlencoded.append("grant_type", "refresh_token");
   urlencoded.append("refresh_token", user?.refresh_token!);
@@ -42,7 +41,8 @@ export async function refreshToken  () {
     },
   })
   const body:AccessToken = await res.json()
-  updateUserLocal({...user, access_token: body.access_token, time: Date.now() + body.expires_in, refresh_token: body.refresh_token})
+  const newUser: UserInfo = {...user, access_token: body.access_token, time: Date.now() + body.expires_in}
+  updateUserLocal(newUser)
   return body
 }
 

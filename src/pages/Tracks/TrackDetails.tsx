@@ -27,9 +27,9 @@ function TrackDetails() {
           <title>{track?.name} - {track?.artists[0].name}</title>
           :
           <title>Spotify Profile</title>
-        }
-           
+        } 
       </Helmet>
+      
       <h1>{track?.name} - {track?.artists[0].name}</h1>
       <h3>{track?.album.name}</h3>
       <img src={track?.album.images[1].url} alt="" />

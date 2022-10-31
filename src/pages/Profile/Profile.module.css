@@ -111,3 +111,19 @@
   cursor: pointer;
 }
 
+.logOutBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #000000;
+  border: 3px transparent solid;
+  padding: 8px 12px;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+.logOutBtn:hover {
+  border: 3px #2ebd59 solid;
+  color: #2ebd59;
+  cursor: pointer;
+}

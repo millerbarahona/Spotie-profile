@@ -1,6 +1,10 @@
 import { UserInfo, UserResponse } from "../../models"
 
-export default async function getUser  (code: string) {
+interface Props {
+  code: string
+}
+
+export default async function getUser  ({code}: Props) {
   const url = 'https://api.spotify.com/v1/me'
   const res = await fetch(url,{
     headers: {

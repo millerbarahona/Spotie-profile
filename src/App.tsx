@@ -12,9 +12,9 @@ function App() {
 
       <BrowserRouter>
         <div className={styles.container}>
-          {
+          {/* {
             uiState.navbar ? <NavBar /> : <div></div>
-          }
+          } */}
           <div className={styles.main}>
             <Router />
           </div>

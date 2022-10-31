@@ -15,16 +15,17 @@ function Artists() {
     <div>
       <div className={styles.container}>
         <h1>Top Artists</h1>
-        <div className={styles.listContainer}>
-          {
-            artistState.artists.map((artist, index) => (
-              <div key={index}>
-                <img src={artist.images[0].url} className={styles.imgPoster} />
-                <p>{artist.name}</p>
-              </div>
-            ))
-          }
-        </div>
+        <div className={styles.artistsList}>
+      {
+          artistState.artists?.map((artist, index) => (
+            <div key={index} className={styles.artistItem} >
+                <img className={styles.artistImg} src={artist.images[2].url} alt="" />
+                <h4>{artist.name}</h4>
+                <p>{artist.type}</p>
+            </div>
+          ))
+        }
+      </div>
       </div>
     </div>
   )

@@ -1,6 +1,24 @@
-.imgPoster {
-  width: 200px;
-  height: 200px;
+:root {
+  --imgWidth: 250px;
+  --flexMargin: 64px;
+  --marginFlex: 64px;
+  --heightCont: 340px;
+  --cardWith: 240px;
+}
+
+@media (max-width: 500px) {
+  :root {
+    --cardWith: 120px;
+  }
+}
+
+.container {
+  margin: 0 var(--flexMargin);
+}
+
+.artistImg {
+  width: 100%;
+  aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 100%;
   -webkit-user-drag: none;
@@ -8,21 +26,29 @@
 
 .listContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(var(--cardWith), 1fr));
 }
 
-@media (max-width: 600px) {
-  .listContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  }
-  .imgPoster {
-    width: 100px;
-    height: 100px;
-  }
+.artistItem {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border-radius: 8px;
+  background-color: #181818;
 }
 
-.container {
-  margin-top: 100px;
+.artistItem:hover {
+  cursor: pointer;
+  background-color: #414141;
+  -webkit-transition: background-color 300ms linear;
+  -ms-transition: background-color 300ms linear;
+  transition: background-color 300ms linear;
 }
 
+.artistsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--cardWith), 1fr));
+  gap: 12px;
+}

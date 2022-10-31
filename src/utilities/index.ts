@@ -7,4 +7,5 @@ export { default as getPermissions } from './api/getPermissions';
 export { default as getUser } from './api/getUser';
 export * from './persistUserLocal';
 export * from './randomString';
+export * from './converMstoSg'
 export { default as RoutesWithNotFund } from './routes-with-not-fund';

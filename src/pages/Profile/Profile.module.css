@@ -1,4 +1,12 @@
+:root {
+  --imgWidth: 250px;
+  --flexMargin: 64px;
+  --marginFlex: 64px;
+  --heightCont: 340px
+}
+
 .main {
+  margin: 0 var(--flexMargin);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-content: space-evenly;
@@ -38,23 +46,33 @@
 }
 
 .artistImg {
-  width: 70px;
-  height: 70px;
+  width: 100%;
   border-radius: 100%;
+  aspect-ratio: 1/1;
   object-fit: cover;
 }
 
 .artistItem {
+  padding: 8px;
   display: flex;
+  align-items: center;
+  flex-direction: column;
   flex-wrap: wrap;
-  flex-direction: row;
-  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #181818;
 }
 
-.artistItem > h4 {
+.artistItem:hover {
+  cursor: pointer;
+  background-color: #414141;
+  -webkit-transition: background-color 300ms linear;
+  -ms-transition: background-color 300ms linear;
+  transition: background-color 300ms linear;
+}
+
+.artistItem h4, p{
   text-align: start;
-  flex-grow: 1;
-  margin-left: 20px;
+  margin: 0;
 }
 
 .trackItem {
@@ -126,4 +144,10 @@
   border: 3px #2ebd59 solid;
   color: #2ebd59;
   cursor: pointer;
+}
+
+.artistsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
 }

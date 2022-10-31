@@ -11,7 +11,6 @@ function Header() {
           <img className={styles.profileImg} src={userState.actualUser.image} alt="" />
         <div className={styles.header_name}>
           <p>PROFILE</p>
-          <br />
           <a href={userState.actualUser.userData?.external_urls.spotify} target='_blank' className={styles.link}>
             <h1 className={styles.title} >{userState.actualUser.name}</h1>
           </a>

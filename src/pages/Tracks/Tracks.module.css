@@ -1,9 +1,3 @@
-:root {
-  --imgWidth: 250px;
-  --flexMargin: 64px;
-  --marginFlex: 64px;
-  --heightCont: 340px
-}
 
 .container {
   padding: 0 var(--flexMargin);
@@ -61,4 +55,16 @@
 .listContainer {
   display: grid;
   gap: 12px;
+}
+
+.navigate {
+  text-align: start;
+}
+.navigate:hover {
+  cursor: default;
+}
+
+.click:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }

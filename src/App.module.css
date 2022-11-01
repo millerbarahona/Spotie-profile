@@ -1,3 +1,11 @@
+:root {
+  --imgWidth: 250px;
+  --flexMargin: 64px;
+  --marginFlex: 64px;
+  --heightCont: 340px;
+  --cardWith: 200px;
+}
+
 .container {
   display: flex;
   flex-direction: row;
@@ -16,10 +24,15 @@
   .main {
     margin-bottom: 50px;
   }
+
+  :root {
+    --cardWith: 120px;
+  }
 }
 
 @media (max-width: 700px) {
   :root {
+    --marginFlex: 24px;
     --imgWidth: 140px;
     --flexMargin: 24px;
     --heightCont: 260px;
@@ -28,9 +41,11 @@
 
 @media (max-width: 500px) {
   :root {
+    --marginFlex: 16px;
     --imgWidth: 140px;
     --flexMargin: 16px;
-    --heightCont: 210px
+    --heightCont: 210px;
+    --cardWidth: 120px
   }
 }
 
@@ -39,5 +54,14 @@
     --imgWidth: 120px;
     --flexMargin: 16px;
     --heightCont: 210px
+  }
+}
+
+@media (min-width: 1000px) {
+  :root {
+    --imgWidth: 180px;
+    --flexMargin: 120px;
+    --heightCont: 210px;
+    --marginFlex: 120px;
   }
 }

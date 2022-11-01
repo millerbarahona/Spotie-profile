@@ -18,10 +18,14 @@ function Tracks() {
     getTracks({ code: userState.actualUser.access_token, limit: 50, time: 'long_term' }).then((tracks) => tracksState.addTracks(tracks.items))
   }, [])
 
+  const handleClick = () => {
+    navigate(-1)
+  }
+
   return (
     <div>
       <div className={styles.container}>
-        <h1>Top Tracks</h1>
+      <h2 className={styles.navigate}> <span className={styles.click} onClick={handleClick}>Profile</span><span> / Top Tracks</span></h2>
         <div className={styles.listContainer}>
           {
             tracksState.tracks.map((track, index) => (

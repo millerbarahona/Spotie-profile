@@ -1,3 +1,4 @@
+export { default as ArtistDetail } from './Artists/ArtistDetail';
 export { default as Artists } from './Artists/Artists';
 export { default as Authorization } from './Authorization/Authorization';
 export { default as Login } from './Login/Login';

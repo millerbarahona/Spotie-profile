@@ -136,6 +136,6 @@
 
 .artistsList {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--cardWidth), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(var(--cardWith), 1fr));
   gap: 12px;
 }

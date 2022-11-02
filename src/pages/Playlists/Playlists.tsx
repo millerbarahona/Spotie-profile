@@ -11,20 +11,24 @@ function Playlists() {
 
   useEffect(() => {
 
-    getPlaylists({ code: userState.actualUser.access_token }).then((playlists) => playlistsState.addPlaylists(playlists.items))
+    getPlaylists({ code: userState.actualUser.access_token , limit: 20}).then((playlists) => playlistsState.addPlaylists(playlists.items))
 
   }, [])
 
 
   return (
     <div>
+      <div className={styles.head}>
+        <h2>Playlists</h2>
+        <button onClick={() => navigate('/playlists')}>See More</button>
+      </div>
       <div className={styles.listContainer}>
         {
           playlistsState.playlists.map((playlist) => (
             <div key={playlist.id} onClick={() => navigate(`/playlists/${playlist.id}`)} className={styles.playlistItem}>
-              <h1>{playlist.name}</h1>
-              <h3>{playlist.owner.display_name}</h3>
               <img src={playlist.images[0]?.url} className={styles.imgPlaylist}/>
+              <h3>{playlist.name}</h3>
+              <h4>{playlist.owner.display_name}</h4>
             </div>
           ))
         }

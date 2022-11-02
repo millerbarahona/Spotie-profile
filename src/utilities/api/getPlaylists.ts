@@ -9,7 +9,7 @@ interface Props {
 }
 
 export async function getPlaylists(props: Props) {
-  const url = `https://api.spotify.com/v1/me/playlists?limit=50`
+  const url = `https://api.spotify.com/v1/me/playlists?limit=${props.limit}`
   await checkRefresh()
   const res = await fetch(url, {
     headers: {

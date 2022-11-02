@@ -4,6 +4,11 @@
   margin-right: 10px;
   margin-top: 50px;
   justify-content: center;
+  padding: 0 var(--flexMargin);
+}
+
+h1 {
+  text-align: start;
 }
 
 @media (max-width: 900px) {
@@ -26,6 +31,27 @@
   background-color: #242424;
 }
 
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.head > button {
+  background-color: #000000;
+  border: none;
+  height: fit-content;
+  padding: 10px;
+  border-radius: 20px;
+  border: 3px solid #000000;
+}
+
+.head > button:hover {
+  border: 3px solid #2ebd59;
+  color: #2ebd59;
+  cursor: pointer;
+}
+
 .header img {
   min-width: 100px;
   min-height: 100px;
@@ -40,7 +66,34 @@
 
 .listContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));;
+  grid-template-columns: repeat(auto-fit, minmax(var(--cardWith), 1fr));
+  gap: 12px;
+}
+
+.playlistItem {
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #181818;
+  padding: 12px;
+}
+
+.playlistItem:hover {
+  cursor: pointer;
+  background-color: #414141;
+  -webkit-transition: background-color 300ms linear;
+  -ms-transition: background-color 300ms linear;
+  transition: background-color 300ms linear;
+}
+
+.playlistItem img {
+  border-radius: 8px;
+}
+
+.playlistItem h4, h3 {
+  margin: 0;
 }
 
 .playlistItem:hover {
@@ -48,10 +101,7 @@
 }
 
 .imgPlaylist {
-  min-width: 100px;
-  min-height: 100px;
-  max-width: 200px;
-  max-height: 200px;
+  width: 100%;
 }
 
 .trackItem {

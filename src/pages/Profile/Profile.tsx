@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Header } from '../../components';
 import { userStore, artistsStore, tracksStore } from '../../state';
 import { getArtists, getTracks, refreshToken } from '../../utilities'
+import Playlists from '../Playlists/Playlists';
 import styles from './Profile.module.css'
 import TopArtistReview from './TopArtistReview';
 import TopTracksReview from './TopTracks';
@@ -28,6 +29,7 @@ function Profile() {
       <div className={styles.main}>
         <TopArtistReview artists={artistState.artists} navigateUrl='/artists'/>
         <TopTracksReview tracks={tracksState.tracks} navigateUrl='/tracks'/>
+        <Playlists />
       </div>
     </div>
   )
